@@ -2,14 +2,14 @@ import React, {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import {useTypeSelector} from "'@'/hooks/use-type-selector";
+import {useSelector} from "\'@\'/hooks/use-selector";
 import {selectWeatherItem} from "'@'/redux/reducers/weatherSlice";
 import {PagesPathEnum} from "'@'/constants/pagesPath.enum";
 import {Box, Card, Container, Typography, Grid} from "@mui/material";
 import {HomeIcon} from "'@'/shared/home-icon"
 
 const SingleCard: FC = (): JSX.Element => {
-    const item = useTypeSelector(selectWeatherItem);
+    const item = useSelector(selectWeatherItem);
 
     return (
         <Container sx={{mt: '3 rem', mb: '3 rem'}}>
@@ -49,7 +49,7 @@ const SingleCard: FC = (): JSX.Element => {
                     {Math.round(item?.main?.temp)}&deg;
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    pressure: {item?.main?.pressure}
+                    pressure: {item?.main?.pressure} {'hPa'}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                     description: {item?.weather.map((item) => item.description)}

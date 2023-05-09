@@ -1,6 +1,7 @@
 import {AppProps} from "next/app";
 import {Provider} from "react-redux";
 import {store} from "'@'/redux/store";
+import Layout from "'@'/layout/layout";
 import {ThemeProvider, createTheme} from '@mui/material';
 import "'@'/styles/globals.scss";
 
@@ -28,7 +29,9 @@ function App({Component, ...pageProps}: AppProps) {
         <>
             <ThemeProvider theme={theme}>
                 <Provider store={store}>
-                    <Component {...pageProps} />
+                    <Layout>
+                        <Component {...pageProps} />
+                    </Layout>
                 </Provider>
             </ThemeProvider>
         </>

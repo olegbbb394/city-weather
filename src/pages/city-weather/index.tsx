@@ -1,8 +1,9 @@
 import React, {FC, useEffect,} from 'react';
 
-import {useTypeDispatch} from "'@'/hooks/use-type-dispatch";
+
 import {getWeatherAction} from "'@'/redux/actions/weather/get-weather.action";
 import {selectWeatherData} from "'@'/redux/reducers/weatherSlice";
+import {useTypeDispatch} from "'@'/hooks/use-type-dispatch";
 import {useTypeSelector} from "'@'/hooks/use-type-selector";
 
 import {BaseSettings} from "'@'/constants/base-settings.enum";
@@ -12,6 +13,8 @@ import {keyGeneratorUtil} from "'@'/utils/key-generator";
 import {CardItem} from "'@'/modules/card-item/card-item";
 import {Box, FormControl, InputLabel, MenuItem, Typography, Select, Container, SelectChangeEvent} from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"
+
+
 
 const CityWeather: FC = (): JSX.Element => {
     const data = useTypeSelector(selectWeatherData);
