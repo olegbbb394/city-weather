@@ -2,11 +2,11 @@ import React, {FC} from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import {useSelector} from "\'@\'/hooks/use-selector";
 import {selectWeatherItem} from "'@'/redux/reducers/weatherSlice";
 import {PagesPathEnum} from "'@'/constants/pagesPath.enum";
 import {Box, Card, Container, Typography, Grid} from "@mui/material";
 import {HomeIcon} from "'@'/shared/home-icon"
+import {useSelector} from "react-redux";
 
 const SingleCard: FC = (): JSX.Element => {
     const item = useSelector(selectWeatherItem);
